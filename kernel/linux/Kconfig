@@ -73,6 +73,10 @@ config LINUX_KERNEL_SRC
 	default 3 if LINUX_KERNEL_WGET
 	default 4 if LINUX_KERNEL_NEXT
 
+config LINUX_KERNEL_SRC_JAGUAR
+       bool "kernel from jaguar"
+
+
 config LINUX_KERNEL_TAR_TYPE
 	string "linux kernel source code tar type"
 
@@ -100,6 +104,7 @@ if ARM64
 
 config LINUX_KERNEL_CROSS_COMPILE
 	string
+	default "aarch64-none-linux-gnu" if LINUX_KERNEL_SRC_JAGUAR
 	default "aarch64-linux-gnu"
 
 endif # ARM64

@@ -4,6 +4,7 @@ TOOLCHAIN-$(CONFIG_TOOL_ARM_LINUX_GCC341)	+= arm-linux-gcc-3.4.1/
 TOOLCHAIN-$(CONFIG_TOOL_ARM_GNUEABI)		+= arm-linux-gnueabi/
 TOOLCHAIN-$(CONFIG_TOOL_ARM_GNUEABIHF)		+= arm-linux-gnueabihf/
 TOOLCHAIN-$(CONFIG_TOOL_AARCH64)		+= aarch64-linux-gnu/
+TOOLCHAIN-$(CONFIG_JAGUAR_TOOL_AARCH64)                += aarch64-none-linux-gnu/
 TOOLCHAIN-$(CONFIG_TOOL_RISCV64)		+= riscv64-biscuitos-linux-gnu/
 TOOLCHAIN-$(CONFIG_TOOL_RISCV32)		+= riscv32-biscuitos-linux-gnu/
 

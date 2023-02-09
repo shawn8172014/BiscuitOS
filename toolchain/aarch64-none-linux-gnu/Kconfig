@@ -1,0 +1,50 @@
+menuconfig JAGUAR_TOOL_AARCH64
+	bool "aarch64-none-linux-gnu"
+
+if JAGUAR_TOOL_AARCH64
+
+choice
+	prompt "Setup way to get aarch64-none-linux-gnu"
+
+config JAGUAR_TOOL_AARCH64_DL
+	bool "aarch64-none-linux-gnu from external file"
+
+config JAGUAR_TOOL_AARCH64_WGET
+	bool "aarch64-none-linux-gnu from wget"
+
+endchoice
+
+config JAGUAR_TOOL_AARCH64_SRC
+	int
+	default 1 if JAGUAR_TOOL_AARCH64_DL
+	default 2 if JAGUAR_TOOL_AARCH64_WGET
+
+if JAGUAR_TOOL_AARCH64_WGET
+
+choice 
+	prompt "Release version"
+endchoice
+
+config AARCH64_FULL_NAME
+	string
+	default "10.3.0-2021.07/aarch64-none-linux-gnu/gcc-arm-10.3-2021.07-x86_64-aarch64-none-linux-gnu.tar.xz" if AARCH64_V7.4-2019.02
+
+config AARCH64_VERSION
+	string
+	default "v10.3-2021.07" if AARCH64_V10.3-2021.07
+ 
+endif # JAGUAR_TOOL_AARCH64_WGET
+
+if JAGUAR_TOOL_AARCH64_DL
+
+config JAGUAR_TOOL_AARCH64_DL_NAME
+	string "aarch64-none-linux-gnu absolute path"
+	default "gcc-arm-10.3-2021.07-x86_64-aarch64-none-linux-gnu.tar.xz"
+
+config AARCH64_VERSION
+	string "aarch64-none-linux-gnu version"
+	default "v10.3-2021.07"
+
+endif # JAGUAR_TOOL_AARCH64_DL
+
+endif # JAGUAR_TOOL_AARCH64
