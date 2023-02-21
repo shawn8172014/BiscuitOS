@@ -64,8 +64,7 @@ get_current_ip_nic()
 		else
 			ip=$(ifconfig $nic | grep 'inet ' | grep -v '127.0.0.1' | cut -d: -f2 | awk '{print $2}')
 		fi
-		ping -I ${nic} www.baidu.com -c1 -W1 -w 0.1 > /dev/null 2>&1
-		[ $? -eq 0 ] && NIC=${nic} && IP=${ip} && return 0
+		NIC=${nic} && IP=${ip} && return 0
 	done
 
 	[ -z ${NIC} ] && echo "Can't find valid NetCard." && return 1
