@@ -100,7 +100,7 @@ if ARM64
 
 config LINUX_KERNEL_CROSS_COMPILE
 	string
-	default "aarch64-linux-gnu"
+	default "aarch64-none-linux-gnu"
 
 endif # ARM64
 

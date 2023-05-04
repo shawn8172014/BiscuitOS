@@ -14,7 +14,7 @@ source toolchain/arm-linux-gnueabi/Kconfig
 source toolchain/arm-linux-gnueabihf/Kconfig
 
 # ARM aarch64
-source toolchain/aarch64-linux-gnu/Kconfig
+source toolchain/aarch64-none-linux-gnu/Kconfig
 
 # ARM none-gnueabi
 source toolchain/arm-none-linux-gnueabi/Kconfig

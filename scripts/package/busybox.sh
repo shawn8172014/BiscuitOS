@@ -134,7 +134,7 @@ elif [ ${ARCH_SRC} = "2" ]; then
 	fi
 	ARCH_TYPE=arm
 elif [ ${ARCH_SRC} = "3" ]; then
-	CROSS_GCC=${OUTPUT}/aarch64-linux-gnu/aarch64-linux-gnu/bin/aarch64-linux-gnu-
+	CROSS_GCC=${OUTPUT}/aarch64-none-linux-gnu/aarch64-none-linux-gnu/bin/aarch64-none-linux-gnu-
 	ARCH_TYPE=arm64
 fi
 cd ${OUTPUT}/${BUSYBOX_NAME}/${BUSYBOX_NAME}
